@@ -12,14 +12,14 @@ action accepts a `fileName` and `splitType` as args
 
 define custom keybind: 
 ```json
-    {
-        "key": "space 1",
-        "command": "toggle-file.toggleFile",
-        "args": {
-            "fileName": "/path/to-your-togglable/file.md"
-        },
-        "when": "!inputFocus && !editorFocus"
+{
+    "key": "space 1",
+    "command": "toggle-file.toggleFile",
+    "args": {
+        "fileName": "/path/to-your-togglable/file.md"
     },
+    "when": "!inputFocus && !editorFocus"
+},
 ```
 
 ## How I use it with neovim vscode extension
@@ -27,14 +27,14 @@ define custom keybind:
 So far I could not figure out how to configure hotkeys in vscode so that they work in all cases but the insert mode so I configure them in two places like that: 
 in keybindings for vscode
 ```json 
-    {
-        "key": "space 1",
-        "command": "toggle-file.toggleFile",
-        "args": {
-            "fileName": "/Users/vitaly/Daily Notes.md"
-        },
-        "when": "!inputFocus && !editorFocus"
+{
+    "key": "space 1",
+    "command": "toggle-file.toggleFile",
+    "args": {
+        "fileName": "/Users/vitaly/Daily Notes.md"
     },
+    "when": "!inputFocus && !editorFocus"
+},
 ```
 
 and in my lua config I have the following
