@@ -1,6 +1,6 @@
 {
-  "name": "toggle-file",
-  "displayName": "Toggle File",
+  "name": "toggle-file-in-split-view-by-hotkey",
+  "displayName": "Toggle File in Split View by Hotkey",
   "description": "Allows you to toggle file in split view",
   "version": "0.0.1",
   "engines": {
@@ -10,6 +10,9 @@
   "categories": [
     "Other"
   ],
+  "repository": {
+    "git": "https://github.com/vsuhanov/toggle-file-name.vscode"
+  },
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
