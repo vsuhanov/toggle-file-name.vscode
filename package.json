@@ -2,7 +2,7 @@
   "name": "toggle-file-in-split-view-by-hotkey",
   "displayName": "Toggle File in Split View by Hotkey",
   "description": "Allows you to toggle file in split view",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.87.0"
   },

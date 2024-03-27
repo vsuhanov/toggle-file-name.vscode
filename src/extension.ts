@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import {homedir} from 'os';
 
 export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('toggle-file.toggleFile', async ({ fileName, splitType = 'vertical' }: { fileName: string, splitType: 'vertical' | 'horizontal' }) => {
@@ -7,9 +8,10 @@ export function activate(context: vscode.ExtensionContext) {
 			return;
 		}
 
+		const resolvedFileName = fileName.replace('~', homedir());
 		const columnToShowIn = splitType === 'vertical' ? vscode.ViewColumn.Beside : vscode.ViewColumn.Active;
 
-		const editor = findEditorByFileName(fileName);
+		const editor = findEditorByFileName(resolvedFileName);
 
 		if (editor) {
 			if (vscode.window.activeTextEditor === editor) {
@@ -18,7 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
 				vscode.window.showTextDocument(editor.document, editor.viewColumn);
 			}
 		} else {
-			const uri = vscode.Uri.file(fileName);
+			const uri = vscode.Uri.file(resolvedFileName);
 
 			await vscode.commands.executeCommand('vscode.open', uri, columnToShowIn);
 		}
